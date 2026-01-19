@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Cloud Professional Cloud Architect Practice Exam</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Google Cloud Professional Cloud Architect Practice Exam</h1>
+    <div class="instructions">
+        Click on an answer to check if it's correct. The correct answer will be highlighted in green.
+        Use the pagination controls to navigate between questions.
+    </div>
+    <div class="navigation-controls">
+        <div class="per-page">
+            Questions per page: 
+            <select id="questionsPerPage" onchange="changeQuestionsPerPage()">
+                <option value="1">1</option>
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="goto-question">
+            Go to question: 
+            <input type="number" id="questionNumber" min="1" placeholder="Enter question number">
+            <button onclick="goToQuestion()">Go</button>
+        </div>
+    </div>
+    <div id="questions"></div>
+    <div class="pagination">
+        <button onclick="previousPage()">Previous</button>
+        <span id="pageInfo"></span>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

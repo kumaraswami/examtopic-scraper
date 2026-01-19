@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.instructions {
+    background-color: #e8f0fe;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #1a73e8;
+    font-size: 14px;
+    text-align: center;
+}
+
+.navigation-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.per-page, .goto-question {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#questionsPerPage {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#questionNumber {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.goto-question button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.goto-question button:hover {
+    background-color: #e3f2fd;
+    border-color: #2196F3;
+}
+
+.question {
+    margin-bottom: 30px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.options {
+    margin-top: 10px;
+}
+
+.option {
+    margin: 12px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+}
+
+.option:hover {
+    background-color: #f5f5f5;
+}
+
+.option.selected {
+    background-color: #e3f2fd;
+    border-color: #2196F3;
+}
+
+.option.correct {
+    background-color: #c8e6c9;
+    border-color: #4CAF50;
+}
+
+.option.incorrect {
+    background-color: #ffcdd2;
+    border-color: #F44336;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.pagination button:hover {
+    background-color: #e3f2fd;
+    border-color: #2196F3;
+}
