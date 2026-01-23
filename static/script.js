@@ -48,6 +48,7 @@ function displayQuestions() {
             <div class="notes" style="margin-top: 10px; font-style: italic; color: #666; ${isAnswered ? '' : 'display: none;'}">
                 ${q.notes}
             </div>
+            <button class="clear-button" onclick="clearAnswer(${startIndex + index})" ${isAnswered ? '' : 'style="display: none;"'}>Clear Answer</button>
         `;
         questionsDiv.appendChild(questionDiv);
     });
@@ -107,10 +108,28 @@ function goToQuestion() {
     }
 }
 
+function clearAnswer(questionIndex) {
+    const options = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .option`);
+    const notesDiv = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .notes`)[0];
+    const clearButton = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .clear-button`)[0];
+    
+    options.forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+    });
+
+    // Hide community votes and clear button
+    notesDiv.style.display = 'none';
+    clearButton.style.display = 'none';
+    
+    // Remove from answered questions
+    answeredQuestions.delete(questionIndex);
+}
+
 function selectOption(questionIndex, optionIndex) {
     const question = allQuestions[questionIndex];
     const options = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .option`);
     const notesDiv = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .notes`)[0];
+    const clearButton = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .clear-button`)[0];
     
     // Get all correct answers (might be multiple)
     const correctAnswers = question.answer.split('');
@@ -147,7 +166,8 @@ function selectOption(questionIndex, optionIndex) {
         });
     }
 
-    // Show community votes after answering
+    // Show community votes and clear button after answering
     answeredQuestions.add(questionIndex);
     notesDiv.style.display = 'block';
+    clearButton.style.display = 'block';
 }
