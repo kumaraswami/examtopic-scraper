@@ -19,11 +19,19 @@ h1 {
     text-align: center;
 }
 
-.controls {
+.navigation-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navigation-controls > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .question {
@@ -95,10 +103,27 @@ button:hover {
     background-color: #5a6268;
 }
 
+.clear-all .clear-button {
+    background-color: #dc3545;
+    margin-top: 0;
+}
+
+.clear-all .clear-button:hover {
+    background-color: #c82333;
+}
+
 .notes {
     margin-top: 15px;
     padding: 10px;
     background-color: #f8f9fa;
     border-radius: 4px;
     font-size: 0.9em;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }

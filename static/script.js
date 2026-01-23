@@ -125,6 +125,21 @@ function clearAnswer(questionIndex) {
     answeredQuestions.delete(questionIndex);
 }
 
+function clearAllAnswers() {
+    // Clear all answers from the current page
+    const startIndex = (currentPage - 1) * questionsPerPage;
+    const endIndex = Math.min(startIndex + questionsPerPage, allQuestions.length);
+    
+    for (let i = startIndex; i < endIndex; i++) {
+        if (answeredQuestions.has(i)) {
+            clearAnswer(i);
+        }
+    }
+    
+    // Refresh display
+    displayQuestions();
+}
+
 function selectOption(questionIndex, optionIndex) {
     const question = allQuestions[questionIndex];
     const options = document.querySelectorAll(`.question:nth-child(${(questionIndex % questionsPerPage) + 1}) .option`);
