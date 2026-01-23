@@ -23,7 +23,7 @@
         </div>
         <div class="goto-question">
             Go to question: 
-            <input type="number" id="questionNumber" min="1" placeholder="Enter question number">
+            <input type="number" id="questionNumber" min="1" placeholder="Enter question number" onkeydown="if(event.key === 'Enter') goToQuestion()">
             <button onclick="goToQuestion()">Go</button>
         </div>
         <div class="clear-all">
